@@ -7,7 +7,7 @@ public interface Matrix<TElement>
     int rows();
     int cols();
 
-    Integer get(int row, int col);
+    TElement get(int row, int col);
     Matrix<TElement> set(int row, int col, TElement value);
 
     Iterable<Integer> row(int index);

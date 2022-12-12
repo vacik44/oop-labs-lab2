@@ -3,10 +3,27 @@ package oop.labs.lab2;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Objects;
 
 public abstract class IntMatrix implements MatrixOfIntegers
 {
     protected final List<List<Integer>> elements;
+
+
+    @Override
+    public boolean equals(Object o)
+    {
+        if (this == o) return true;
+        if (!(o instanceof IntMatrix)) return false;
+        IntMatrix intMatrix = (IntMatrix) o;
+        return elements.equals(intMatrix.elements);
+    }
+
+    @Override
+    public int hashCode()
+    {
+        return Objects.hash(elements);
+    }
 
 
     protected IntMatrix(List<List<Integer>> elements)
