@@ -1,0 +1,93 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > Matrix</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/highlight-idea.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">oop.labs.lab2</a>
+</div>
+
+<h1>Coverage Summary for Class: Matrix (oop.labs.lab2)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+</tr>
+<tr>
+  <td class="name">Matrix</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<div class="sourceCode" id="sourceCode"><i class="no-highlight">1</i>&nbsp;package oop.labs.lab2;
+<i class="no-highlight">2</i>&nbsp;
+<i class="no-highlight">3</i>&nbsp;public interface Matrix&lt;TElement&gt;
+<i class="no-highlight">4</i>&nbsp;{
+<i class="no-highlight">5</i>&nbsp;    int[] size();
+<i class="no-highlight">6</i>&nbsp;
+<i class="no-highlight">7</i>&nbsp;    int rows();
+<i class="no-highlight">8</i>&nbsp;    int cols();
+<i class="no-highlight">9</i>&nbsp;
+<i class="no-highlight">10</i>&nbsp;    TElement get(int row, int col);
+<i class="no-highlight">11</i>&nbsp;    Matrix&lt;TElement&gt; set(int row, int col, TElement value);
+<i class="no-highlight">12</i>&nbsp;
+<i class="no-highlight">13</i>&nbsp;    Iterable&lt;Integer&gt; row(int index);
+<i class="no-highlight">14</i>&nbsp;    Iterable&lt;Integer&gt; col(int index);
+<i class="no-highlight">15</i>&nbsp;
+<i class="no-highlight">16</i>&nbsp;    Matrix&lt;TElement&gt; fillRow(int index, Iterable&lt;TElement&gt; source);
+<i class="no-highlight">17</i>&nbsp;    Matrix&lt;TElement&gt; fillCol(int index, Iterable&lt;TElement&gt; source);
+<i class="no-highlight">18</i>&nbsp;
+<i class="no-highlight">19</i>&nbsp;    Matrix&lt;TElement&gt; fillRow(int index, TElement[] source);
+<i class="no-highlight">20</i>&nbsp;    Matrix&lt;TElement&gt; fillCol(int index, TElement[] source);
+<i class="no-highlight">21</i>&nbsp;
+<i class="no-highlight">22</i>&nbsp;    Matrix&lt;TElement&gt; fill(Integer[][] source);
+<i class="no-highlight">23</i>&nbsp;    &lt;TRow extends Iterable&lt;TElement&gt;&gt; Matrix&lt;TElement&gt; fill(Iterable&lt;TRow&gt; source);
+<i class="no-highlight">24</i>&nbsp;}
+</div>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+        var codeBlock = document.getElementById('sourceCode');
+
+        if (codeBlock) {
+            hljs.highlightBlock(codeBlock);
+        }
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2022-12-13 00:41</div>
+</div>
+</body>
+</html>
