@@ -39,7 +39,7 @@ public class IntMatrixMutable extends IntMatrix
 
     public static IntMatrixMutable eye(int size)
     {
-        return new IntMatrixMutable(buildIdentityMatrix(size));
+        return new IntMatrixMutable(false, buildIdentityMatrix(size));
     }
 
 
@@ -157,8 +157,8 @@ public class IntMatrixMutable extends IntMatrix
 
 
     @Override
-    public MatrixOfIntegers dot(MatrixOfIntegers multiplier)
+    public MatrixOfIntegers dot(MatrixOfIntegers other)
     {
-        return null;
+        return new IntMatrixMutable(false, buildDotSource(other));
     }
 }

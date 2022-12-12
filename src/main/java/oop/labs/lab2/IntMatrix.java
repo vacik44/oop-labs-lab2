@@ -146,8 +146,24 @@ public abstract class IntMatrix implements MatrixOfIntegers
     }
 
 
-    protected List<List<Integer>> buildDotSource(MatrixOfIntegers multiplier)
+    protected List<List<Integer>> buildDotSource(MatrixOfIntegers other)
     {
-        return null;
+        var resultSource = new ArrayList<List<Integer>>(this.rows());
+
+        for (var i = 0; i < this.rows(); i++)
+        {
+            var row = new ArrayList<Integer>(other.cols());
+
+            for (var j = 0; j < other.cols(); j++)
+            {
+                var sum = 0;
+                for (var k = 0; k < this.cols(); k++) sum += this.get(i, k) * other.get(k, j);
+                row.add(sum);
+            }
+
+            resultSource.add(row);
+        }
+
+        return resultSource;
     }
 }

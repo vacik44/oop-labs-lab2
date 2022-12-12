@@ -1,6 +1,5 @@
 package oop.labs.lab2;
 
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -47,14 +46,19 @@ public final class IntMatrixImmutable extends IntMatrix
 
     public static IntMatrixImmutable eye(int size)
     {
-        return new IntMatrixImmutable(buildIdentityMatrix(size));
+        return new IntMatrixImmutable(false, buildIdentityMatrix(size));
+    }
+
+    public static IntMatrixImmutable immutable(IntMatrixMutable matrix)
+    {
+        return new IntMatrixImmutable(false, matrix.elements);
     }
 
 
     @Override
-    public MatrixOfIntegers dot(MatrixOfIntegers multiplier)
+    public MatrixOfIntegers dot(MatrixOfIntegers other)
     {
-        return null;
+        return new IntMatrixImmutable(false, buildDotSource(other));
     }
 
 
