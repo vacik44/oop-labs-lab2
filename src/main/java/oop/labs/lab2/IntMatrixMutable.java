@@ -1,11 +1,20 @@
 package oop.labs.lab2;
 
+import java.util.List;
+
 public class IntMatrixMutable extends IntMatrix
 {
     public IntMatrixMutable()
     {
         super(buildMatrix());
     }
+
+
+    protected IntMatrixMutable(boolean ignored, List<List<Integer>> elements)
+    {
+        super(elements);
+    }
+
 
     public IntMatrixMutable(int rows, int cols, Integer init)
     {
@@ -25,6 +34,12 @@ public class IntMatrixMutable extends IntMatrix
     public IntMatrixMutable(MatrixOfIntegers other)
     {
         super(buildMatrix(other));
+    }
+
+
+    public static IntMatrixMutable eye(int size)
+    {
+        return new IntMatrixMutable(buildIdentityMatrix(size));
     }
 
 

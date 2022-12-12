@@ -1,5 +1,6 @@
 package oop.labs.lab2;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -9,6 +10,12 @@ public final class IntMatrixImmutable extends IntMatrix
     {
         matrix.replaceAll(Collections::unmodifiableList);
         return Collections.unmodifiableList(matrix);
+    }
+
+
+    private IntMatrixImmutable(boolean ignored, List<List<Integer>> elements)
+    {
+        super(makeImmutable(elements));
     }
 
 
@@ -35,6 +42,12 @@ public final class IntMatrixImmutable extends IntMatrix
     public IntMatrixImmutable(MatrixOfIntegers other)
     {
         super(makeImmutable(buildMatrix(other)));
+    }
+
+
+    public static IntMatrixImmutable eye(int size)
+    {
+        return new IntMatrixImmutable(buildIdentityMatrix(size));
     }
 
 

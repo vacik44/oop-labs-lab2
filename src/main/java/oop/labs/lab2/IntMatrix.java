@@ -15,6 +15,25 @@ public abstract class IntMatrix implements MatrixOfIntegers
     }
 
 
+    protected static List<List<Integer>> buildIdentityMatrix(int size)
+    {
+        var source = new ArrayList<List<Integer>>(size);
+
+        for (var i = 0; i < size; i++)
+        {
+            var row = new ArrayList<Integer>(size);
+            for (var j = 0; j < size; j++)
+                row.add(0);
+
+            row.set(i, 1);
+
+            source.add(row);
+        }
+
+        return source;
+    }
+
+
     protected static List<List<Integer>> buildMatrix()
     {
         return new ArrayList<>(0);
@@ -127,6 +146,8 @@ public abstract class IntMatrix implements MatrixOfIntegers
     }
 
 
-    @Override
-    public abstract MatrixOfIntegers dot(MatrixOfIntegers multiplier);
+    protected List<List<Integer>> buildDotSource(MatrixOfIntegers multiplier)
+    {
+        return null;
+    }
 }
