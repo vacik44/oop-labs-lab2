@@ -1,11 +1,12 @@
-package oop.labs.lab2;
+package oop.labs.lab2.assertions;
+
+import oop.labs.lab2.Matrix;
 
 public class MatrixAssertions
 {
-    @SuppressWarnings("unchecked")
     public static <TElement> MatrixAssert<TElement> assertThat(Matrix<TElement> actual, Class<TElement> type)
     {
-        return new MatrixAssert<TElement>(actual, type);
+        return new MatrixAssert<>(actual, type);
     }
 
     public static MatrixAssert<Integer> assertThat(Matrix<Integer> actual)

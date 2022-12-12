@@ -12,4 +12,4 @@ import org.junit.runners.Suite;
         IntMatrixMutableTest.class,
         IntMatrixImmutableTest.class
 })
-public class Testing {}
+public class TestingAuto {}

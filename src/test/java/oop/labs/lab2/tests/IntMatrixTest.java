@@ -4,7 +4,7 @@ import oop.labs.lab2.IntMatrixImmutable;
 import oop.labs.lab2.IntMatrixMutable;
 import org.junit.Test;
 
-import static oop.labs.lab2.MatrixAssertions.assertThat;
+import static oop.labs.lab2.assertions.MatrixAssertions.assertThat;
 
 public class IntMatrixTest
 {

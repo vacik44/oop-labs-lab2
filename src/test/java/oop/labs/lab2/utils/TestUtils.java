@@ -1,8 +1,10 @@
-package oop.labs.lab2;
+package oop.labs.lab2.utils;
 
-public class TestingTools
+import oop.labs.lab2.Matrix;
+
+public class TestUtils
 {
-    private static <TElement> void testOut(Matrix<TElement> matrix)
+    public static <TElement> void testOut(Matrix<TElement> matrix)
     {
         for (var i = 1; i <= matrix.rows(); i++)
         {
@@ -18,13 +20,13 @@ public class TestingTools
     }
 
 
-    private static void testOut(String string)
+    public static void testOut(String string)
     {
         System.out.println(string);
         System.out.println();
     }
 
-    private static void testOut(Object object)
+    public static void testOut(Object object)
     {
         System.out.println(object);
         System.out.println();
