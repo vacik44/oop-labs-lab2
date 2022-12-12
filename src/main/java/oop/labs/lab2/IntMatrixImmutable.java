@@ -67,9 +67,9 @@ public final class IntMatrixImmutable extends IntMatrix
     @Override public Matrix<Integer> fillRow(int index, Iterable<Integer> source) { throw new UnsupportedOperationException(); }
     @Override public Matrix<Integer> fillCol(int index, Iterable<Integer> source) { throw new UnsupportedOperationException(); }
 
-    @Override public Matrix<Integer> fillRow(int index, int[] source) { throw new UnsupportedOperationException(); }
-    @Override public Matrix<Integer> fillCol(int index, int[] source) { throw new UnsupportedOperationException(); }
+    @Override public Matrix<Integer> fillRow(int index, Integer[] source) { throw new UnsupportedOperationException(); }
+    @Override public Matrix<Integer> fillCol(int index, Integer[] source) { throw new UnsupportedOperationException(); }
 
-    @Override public Matrix<Integer> fill(int[][] source) { throw new UnsupportedOperationException(); }
+    @Override public Matrix<Integer> fill(Integer[][] source) { throw new UnsupportedOperationException(); }
     @Override public <TRow extends Iterable<Integer>> Matrix<Integer> fill(Iterable<TRow> source) { throw new UnsupportedOperationException(); }
 }

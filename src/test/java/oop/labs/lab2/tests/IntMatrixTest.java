@@ -24,10 +24,10 @@ public class IntMatrixTest
                 .isEqualTo(m1).hasSameHashCodeAs(m1)
                 .isNotEqualTo(m2).doesNotHaveSameHashCodeAs(m2)
                 .isEqualTo(i1).hasSameHashCodeAs(i1)
-                .isNotEqualTo(i2).doesNotHaveSameHashCodeAs(i1);
+                .isNotEqualTo(i2).doesNotHaveSameHashCodeAs(i2);
 
         assertThat(new IntMatrixImmutable(content1))
                 .isEqualTo(i1).hasSameHashCodeAs(i1)
-                .isEqualTo(i2).doesNotHaveSameHashCodeAs(i2);
+                .isNotEqualTo(i2).doesNotHaveSameHashCodeAs(i2);
     }
 }

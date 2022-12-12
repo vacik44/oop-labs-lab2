@@ -4,9 +4,9 @@ public class TestingTools
 {
     private static <TElement> void testOut(Matrix<TElement> matrix)
     {
-        for (var i = 0; i < matrix.rows(); i++)
+        for (var i = 1; i <= matrix.rows(); i++)
         {
-            for (var j = 0; j < matrix.cols(); j++)
+            for (var j = 1; j <= matrix.cols(); j++)
             {
                 System.out.print(matrix.get(i, j).toString() + ", ");
             }

@@ -16,9 +16,9 @@ public interface Matrix<TElement>
     Matrix<TElement> fillRow(int index, Iterable<TElement> source);
     Matrix<TElement> fillCol(int index, Iterable<TElement> source);
 
-    Matrix<TElement> fillRow(int index, int[] source);
-    Matrix<TElement> fillCol(int index, int[] source);
+    Matrix<TElement> fillRow(int index, TElement[] source);
+    Matrix<TElement> fillCol(int index, TElement[] source);
 
-    Matrix<TElement> fill(int[][] source);
+    Matrix<TElement> fill(Integer[][] source);
     <TRow extends Iterable<TElement>> Matrix<TElement> fill(Iterable<TRow> source);
 }

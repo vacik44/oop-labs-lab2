@@ -105,7 +105,7 @@ public abstract class IntMatrix implements MatrixOfIntegers
     {
         var matrix = new ArrayList<List<Integer>>(other.rows());
 
-        for (var i = 0; i < other.rows(); i++)
+        for (var i = 1; i <= other.rows(); i++)
         {
             var content = new ArrayList<Integer>(other.cols());
 
@@ -141,23 +141,24 @@ public abstract class IntMatrix implements MatrixOfIntegers
     @Override
     public Integer get(int row, int col)
     {
-        return elements.get(row).get(col);
+        return elements.get(row - 1).get(col - 1);
     }
 
 
     @Override
     public Iterable<Integer> row(int index)
     {
-        return Collections.unmodifiableList(elements.get(index));
+        return Collections.unmodifiableList(elements.get(index - 1));
     }
 
     @Override
     public Iterable<Integer> col(int index)
     {
         var column = new ArrayList<Integer>(rows());
+        var c = index - 1;
 
         for (var row : elements)
-            column.add(row.get(index));
+            column.add(row.get(c));
 
         return Collections.unmodifiableList(column);
     }
@@ -167,14 +168,14 @@ public abstract class IntMatrix implements MatrixOfIntegers
     {
         var resultSource = new ArrayList<List<Integer>>(this.rows());
 
-        for (var i = 0; i < this.rows(); i++)
+        for (var i = 1; i <= this.rows(); i++)
         {
             var row = new ArrayList<Integer>(other.cols());
 
-            for (var j = 0; j < other.cols(); j++)
+            for (var j = 1; j <= other.cols(); j++)
             {
                 var sum = 0;
-                for (var k = 0; k < this.cols(); k++) sum += this.get(i, k) * other.get(k, j);
+                for (var k = 1; k <= this.cols(); k++) sum += this.get(i, k) * other.get(k, j);
                 row.add(sum);
             }
 

@@ -20,7 +20,7 @@ public class MatrixAssert<TElement> extends ObjectAssert<Matrix<TElement>>
 
         for (var i = 0; i < matrix.rows(); i++)
             for (var j = 0; j < matrix.cols(); j++)
-                content[i][j] = matrix.get(i, j);
+                content[i][j] = matrix.get(i + 1, j + 1);
 
         return content;
     }

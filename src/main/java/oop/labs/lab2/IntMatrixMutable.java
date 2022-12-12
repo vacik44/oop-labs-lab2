@@ -46,7 +46,7 @@ public class IntMatrixMutable extends IntMatrix
     @Override
     public Matrix<Integer> set(int row, int col, Integer value)
     {
-        elements.get(row).set(col, value);
+        elements.get(row - 1).set(col - 1, value);
         return this;
     }
 
@@ -54,7 +54,7 @@ public class IntMatrixMutable extends IntMatrix
     @Override
     public Matrix<Integer> fillRow(int index, Iterable<Integer> source)
     {
-        var row = elements.get(index);
+        var row = elements.get(index - 1);
 
         var i = 0;
         for (var element: source)
@@ -70,9 +70,11 @@ public class IntMatrixMutable extends IntMatrix
     public Matrix<Integer> fillCol(int index, Iterable<Integer> source)
     {
         var i = 0;
+        var c = index - 1;
+
         for (var element: source)
         {
-            elements.get(i).set(i, element);
+            elements.get(i).set(index - c, element);
             i++;
         }
 
@@ -81,9 +83,9 @@ public class IntMatrixMutable extends IntMatrix
 
 
     @Override
-    public Matrix<Integer> fillRow(int index, int[] source)
+    public Matrix<Integer> fillRow(int index, Integer[] source)
     {
-        var row = elements.get(index);
+        var row = elements.get(index - 1);
 
         var i = 0;
         for (var element: source)
@@ -96,12 +98,14 @@ public class IntMatrixMutable extends IntMatrix
     }
 
     @Override
-    public Matrix<Integer> fillCol(int index, int[] source)
+    public Matrix<Integer> fillCol(int index, Integer[] source)
     {
         var i = 0;
+        var c = index - 1;
+
         for (var element: source)
         {
-            elements.get(i).set(i, element);
+            elements.get(i).set(c, element);
             i++;
         }
 
@@ -111,7 +115,7 @@ public class IntMatrixMutable extends IntMatrix
 
     @Override
     @SuppressWarnings("DuplicatedCode")
-    public Matrix<Integer> fill(int[][] source)
+    public Matrix<Integer> fill(Integer[][] source)
     {
         var i = 0;
 

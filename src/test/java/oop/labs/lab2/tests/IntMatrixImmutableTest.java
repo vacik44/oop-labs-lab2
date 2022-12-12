@@ -5,6 +5,8 @@ import org.junit.Test;
 import java.util.List;
 
 import static oop.labs.lab2.MatrixAssertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.catchThrowable;
 
 public class IntMatrixImmutableTest
 {
@@ -31,5 +33,16 @@ public class IntMatrixImmutableTest
                 });
     }
 
+    @Test
+    public void testImmutability()
+    {
+        var matrix = new IntMatrixImmutable(1, 1, 1);
 
+        assertThat(catchThrowable(() -> matrix.set(1, 1, 2))).isInstanceOf(UnsupportedOperationException.class);
+        assertThat(catchThrowable(() -> matrix.fill(List.of(List.of(1))))).isInstanceOf(UnsupportedOperationException.class);
+        assertThat(catchThrowable(() -> matrix.fillRow(1, new Integer[] {2}))).isInstanceOf(UnsupportedOperationException.class);
+        assertThat(catchThrowable(() -> matrix.fillCol(1, new Integer[] {2}))).isInstanceOf(UnsupportedOperationException.class);
+        assertThat(catchThrowable(() -> matrix.fillRow(1, List.of(2)))).isInstanceOf(UnsupportedOperationException.class);
+        assertThat(catchThrowable(() -> matrix.fillCol(1, List.of(2)))).isInstanceOf(UnsupportedOperationException.class);
+    }
 }
