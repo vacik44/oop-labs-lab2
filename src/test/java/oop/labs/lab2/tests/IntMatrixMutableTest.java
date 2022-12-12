@@ -58,6 +58,20 @@ public class IntMatrixMutableTest
     @Test
     public void testMutability()
     {
+        var matrix = new IntMatrixMutable(3, 3, null);
 
+        assertThat(matrix.fill(new Integer[][]{{1, 2, 3}, {3, 4, 5}, {6, 7, 8}})).isSameMatrixAs(new Integer[][]{{1, 2, 3}, {3, 4, 5}, {6, 7, 8}});
+
+        assertThat(matrix.set(1, 1, null)).isSameMatrixAs(new Integer[][]{{null, 2, 3}, {3, 4, 5}, {6, 7, 8}});
+        assertThat(matrix.set(2, 2, null)).isSameMatrixAs(new Integer[][]{{null, 2, 3}, {3, null, 5}, {6, 7, 8}});
+        assertThat(matrix.set(3, 3, null)).isSameMatrixAs(new Integer[][]{{null, 2, 3}, {3, null, 5}, {6, 7, null}});
+
+        assertThat(matrix.fillRow(1, List.of(0, -1, -10))).isSameMatrixAs(new Integer[][]{{0, -1, -10}, {3, null, 5}, {6, 7, null}});
+        assertThat(matrix.fillRow(3, new Integer[] {12, 16, 1})).isSameMatrixAs(new Integer[][]{{0, -1, -10}, {3, null, 5}, {12, 16, 1}});
+
+        assertThat(matrix.fillCol(1, List.of(12, -12, 0))).isSameMatrixAs(new Integer[][]{{12, -1, -10}, {-12, null, 5}, {0, 16, 1}});
+        assertThat(matrix.fillCol(3, new Integer[] {122, -1, -23})).isSameMatrixAs(new Integer[][]{{12, -1, 122}, {-12, null, -1}, {0, 16, -23}});
+
+        assertThat(matrix.fill(List.of(List.of(11, -12, 13), List.of(-14, 15, -16), List.of(17, -18, 19)))).isSameMatrixAs(new Integer[][]{{11, -12, 13}, {-14, 15, -16}, {17, -18, 19}});
     }
 }

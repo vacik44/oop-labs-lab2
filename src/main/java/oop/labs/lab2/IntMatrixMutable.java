@@ -74,7 +74,7 @@ public class IntMatrixMutable extends IntMatrix
 
         for (var element: source)
         {
-            elements.get(i).set(index - c, element);
+            elements.get(i).set(c, element);
             i++;
         }
 
