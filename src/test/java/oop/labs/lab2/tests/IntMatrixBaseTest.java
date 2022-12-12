@@ -4,9 +4,9 @@ import oop.labs.lab2.IntMatrixImmutable;
 import oop.labs.lab2.IntMatrixMutable;
 import org.junit.Test;
 
-import static oop.labs.lab2.assertions.MatrixAssertions.assertThat;
+import static oop.labs.lab2.tools.MatrixAssertions.assertThat;
 
-public class IntMatrixTest
+public class IntMatrixBaseTest
 {
     @Test
     public void testEqualsHashCode()

@@ -1,6 +1,6 @@
 package oop.labs.lab2;
 
-import static oop.labs.lab2.utils.TestUtils.testOut;
+import static oop.labs.lab2.tools.TestUtils.testOut;
 
 public class TestingManual
 {

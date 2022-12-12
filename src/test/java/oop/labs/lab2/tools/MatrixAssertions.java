@@ -1,4 +1,4 @@
-package oop.labs.lab2.assertions;
+package oop.labs.lab2.tools;
 
 import oop.labs.lab2.Matrix;
 

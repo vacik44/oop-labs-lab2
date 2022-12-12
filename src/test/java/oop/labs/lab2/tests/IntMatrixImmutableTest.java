@@ -5,7 +5,7 @@ import oop.labs.lab2.IntMatrixMutable;
 import org.junit.Test;
 import java.util.List;
 
-import static oop.labs.lab2.assertions.MatrixAssertions.assertThat;
+import static oop.labs.lab2.tools.MatrixAssertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.catchThrowable;
 

@@ -166,6 +166,8 @@ public abstract class IntMatrix implements MatrixOfIntegers
 
     protected List<List<Integer>> buildDotSource(MatrixOfIntegers other)
     {
+        if (this.cols() != other.rows()) throw new IllegalArgumentException("Operands sizes mismatch. Unable to multiply");
+
         var resultSource = new ArrayList<List<Integer>>(this.rows());
 
         for (var i = 1; i <= this.rows(); i++)
